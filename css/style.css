@@ -9,13 +9,13 @@ header h1{
 
 main{
     background-color: aquamarine;
-    height: 100%;
+    height: calc(100vh - 142px);
 }
 
 div.grid{
     width: 500px;
     height: 500px;
-    margin: 3rem auto;
+    margin: auto;
 }
 
 div.square{
