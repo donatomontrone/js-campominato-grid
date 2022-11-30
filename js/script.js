@@ -17,6 +17,18 @@ function getNewElement(parentElement, element) {
     return newElement;
     }
 
+function getNewSquareElement(content) {
+    let newSquare = getNewElement(gridElement, 'div');
+    let newP = getNewElement(newSquare, 'p');
+    newP.innerText = content;
+    newSquare.classList.add('square', 'd-flex');
+    newP.classList.add('m-auto');
+    newSquare.addEventListener('click', function(){
+        newSquare.classList.toggle('active');
+        console.log(`Hai cliccato la cella ${content}`)
+    })
+    return newSquare;
+}
 
 //===============================================================//
 const mainElement = document.querySelector('main');
@@ -28,15 +40,7 @@ gridElement.classList.add('d-flex','flex-wrap', 'grid');
 buttonElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
     for (let index = 1; index <= 100; index++) {
-        let newSquare = getNewElement(gridElement, 'div');
-        let newP = getNewElement(newSquare, 'p');
-        newP.innerText = index;
-        newSquare.classList.add('square', 'd-flex',);
-        newP.classList.add('m-auto');
-        newSquare.addEventListener('click', function(){
-            newSquare.classList.toggle('active');
-            console.log(`Hai cliccato la cella ${index}`)
-        })
+        let squareElement = getNewSquareElement(index);
     }
 })
 
