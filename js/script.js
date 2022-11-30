@@ -21,21 +21,28 @@ function getNewElement(parentElement, element) {
 //===============================================================//
 
 const mainElement = document.querySelector('main');
+const buttonElement = document.querySelector('button');
 
 const gridElement = getNewElement(mainElement, 'div');
+gridElement.classList.add('d-flex', 'flex-wrap', 'grid');
 
-let newSquare;
-let newP;
+
 
 for (let index = 1; index <= 100; index++) {
-    newSquare = getNewElement(gridElement, 'div');
-    newP = getNewElement(newSquare, 'p');
+    let newSquare = getNewElement(gridElement, 'div');
+    let newP = getNewElement(newSquare, 'p');
     newP.innerText = index;
     newSquare.classList.add('square', 'd-flex',);
-    newP.classList.add('m-auto')
+    newP.classList.add('m-auto');
+    newSquare.addEventListener('click', function(){
+        newSquare.classList.toggle('active');
+    })
 }
 
-gridElement.classList.add('d-flex', 'flex-wrap');
+
+
+
+
 
 
 

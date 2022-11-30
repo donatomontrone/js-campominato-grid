@@ -1,9 +1,29 @@
-main{
-    height: 80vh;
-    justify-content: center;
+header img{
+    width: 60px;
 }
-main div.square{
+
+header h1{
+    color: #001433;
+    margin-top: 10px;
+}
+
+main{
+    background-color: aquamarine;
+}
+
+div.grid{
+    width: 500px;
+    height: 500px;
+    margin: 3rem auto;
+}
+
+div.square{
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid black;
+    cursor: crosshair;
+}
+
+div.active{
+    background-color: #0D6EFD;
 }
