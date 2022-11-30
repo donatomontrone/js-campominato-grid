@@ -1,0 +1,9 @@
+main{
+    height: 80vh;
+    justify-content: center;
+}
+main div.square{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}

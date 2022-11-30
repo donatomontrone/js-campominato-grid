@@ -17,15 +17,25 @@ function getNewElement(parentElement, element) {
     return newElement;
     }
 
+
 //===============================================================//
 
 const mainElement = document.querySelector('main');
 
 const gridElement = getNewElement(mainElement, 'div');
 
+let newSquare;
+let newP;
+
 for (let index = 1; index <= 100; index++) {
-    const newSquare = getNewElement(gridElement, 'div');
-    const newP = getNewElement(newSquare, 'p');
-    newP.innerHTML = index;
+    newSquare = getNewElement(gridElement, 'div');
+    newP = getNewElement(newSquare, 'p');
+    newP.innerText = index;
+    newSquare.classList.add('square', 'd-flex',);
+    newP.classList.add('m-auto')
 }
+
+gridElement.classList.add('d-flex', 'flex-wrap');
+
+
 
