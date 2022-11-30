@@ -11,20 +11,21 @@
 //===========================FUNZIONI============================//
 //===============================================================//
 
-function getNewSquare(domElement) {
-    const newSquare = document.createElement('div');
-    domElement.append(newSquare);
-    return newSquare;
+function getNewElement(parentElement, element) {
+    const newElement = document.createElement(element);
+    parentElement.append(newElement);
+    return newElement;
     }
 
 //===============================================================//
 
 const mainElement = document.querySelector('main');
 
-const gridElement = getNewSquare(mainElement);
+const gridElement = getNewElement(mainElement, 'div');
 
 for (let index = 1; index <= 100; index++) {
-    const newSquare = getNewSquare(gridElement);
-    newSquare.innerText= index;
+    const newSquare = getNewElement(gridElement, 'div');
+    const newP = getNewElement(newSquare, 'p');
+    newP.innerHTML = index;
 }
 
