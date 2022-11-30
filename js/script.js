@@ -19,25 +19,28 @@ function getNewElement(parentElement, element) {
 
 
 //===============================================================//
-
 const mainElement = document.querySelector('main');
 const buttonElement = document.querySelector('button');
 
-const gridElement = getNewElement(mainElement, 'div');
-gridElement.classList.add('d-flex', 'flex-wrap', 'grid');
+let gridElement = getNewElement(mainElement, 'div');
+gridElement.classList.add('d-flex','flex-wrap', 'grid');
+
+buttonElement.addEventListener('click', function(){
+    gridElement.innerHTML = "";
+    for (let index = 1; index <= 100; index++) {
+        let newSquare = getNewElement(gridElement, 'div');
+        let newP = getNewElement(newSquare, 'p');
+        newP.innerText = index;
+        newSquare.classList.add('square', 'd-flex',);
+        newP.classList.add('m-auto');
+        newSquare.addEventListener('click', function(){
+            newSquare.classList.toggle('active');
+            console.log(`Hai cliccato la cella ${index}`)
+        })
+    }
+})
 
 
-
-for (let index = 1; index <= 100; index++) {
-    let newSquare = getNewElement(gridElement, 'div');
-    let newP = getNewElement(newSquare, 'p');
-    newP.innerText = index;
-    newSquare.classList.add('square', 'd-flex',);
-    newP.classList.add('m-auto');
-    newSquare.addEventListener('click', function(){
-        newSquare.classList.toggle('active');
-    })
-}
 
 
 

@@ -9,6 +9,7 @@ header h1{
 
 main{
     background-color: aquamarine;
+    height: 100%;
 }
 
 div.grid{
