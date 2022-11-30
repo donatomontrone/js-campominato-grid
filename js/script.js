@@ -17,11 +17,11 @@ function getNewElement(parentElement, element) {
     return newElement;
     }
 
-function getNewSquareElement(content) {
+function getNewSquareElement(content,levelClass) {
     let newSquare = getNewElement(gridElement, 'div');
     let newP = getNewElement(newSquare, 'p');
+    newSquare.classList.add('d-flex', levelClass);
     newP.innerText = content;
-    newSquare.classList.add('square', 'd-flex');
     newP.classList.add('m-auto');
     newSquare.addEventListener('click', function(){
         newSquare.classList.toggle('active');
@@ -32,15 +32,30 @@ function getNewSquareElement(content) {
 
 //===============================================================//
 const mainElement = document.querySelector('main');
-const buttonElement = document.querySelector('button');
+const buttonEasyElement = document.querySelector('button.btn-success');
+const buttonMidElement = document.querySelector('button.btn-warning');
+const buttonHardElement = document.querySelector('button.btn-danger');
 
 let gridElement = getNewElement(mainElement, 'div');
 gridElement.classList.add('d-flex','flex-wrap', 'grid');
 
-buttonElement.addEventListener('click', function(){
+buttonEasyElement.addEventListener('click', function(){
+    gridElement.innerHTML = "";
+    for (let index = 1; index <= 49; index++) {
+        let squareElement = getNewSquareElement(index,'square-easy');
+    }
+})
+
+buttonMidElement.addEventListener('click', function(){
+    gridElement.innerHTML = "";
+    for (let index = 1; index <= 64; index++) {
+        let squareElement = getNewSquareElement(index,'square-normal');
+    }
+})
+buttonHardElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
     for (let index = 1; index <= 100; index++) {
-        let squareElement = getNewSquareElement(index);
+        let squareElement = getNewSquareElement(index, 'square-hard');
     }
 })
 

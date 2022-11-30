@@ -18,7 +18,21 @@ div.grid{
     margin: auto;
 }
 
-div.square{
+div.square-easy{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 1px solid black;
+    cursor: crosshair;
+}
+
+div.square-normal{
+    width: calc(100% / 8);
+    height: calc(100% / 8);
+    border: 1px solid black;
+    cursor: crosshair;
+}
+
+div.square-hard{
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid black;
